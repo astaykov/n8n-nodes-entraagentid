@@ -39,7 +39,7 @@ While this node implements the `authenticate` hook, **the credential always fetc
 | **On Behalf Of** *(optional)* | Determines the token flow: leave empty for an **autonomous agent** token (app-only). Supply a UPN (e.g. `agent@contoso.com`) to acquire a token on behalf of an **Agent User**. Supply `Bearer <token>` to perform a standard **OBO flow** on behalf of a signed-in human user. |
 | **Scope** | The target resource scope, e.g. `https://graph.microsoft.com/.default`. Defaults to `https://graph.microsoft.com/.default`. |
 
----
+> **Note:** For instructions on how to create agent identity blueprint, agent identity, agent user and add secret to the blueprint, follow the instructions [here](./readme.entra.agentid.md).
 
 ### Entra Agent ID Authentication Manager
 

@@ -2,7 +2,7 @@
 Instructions to create requried Agent Identity artefacts to demonstrate and work with Entra Agent ID Authenticaiton Manager in n8n.
 Uses `Microsoft.Entra.Beta` v1.2.0+ native cmdlets. Requires PowerShell 7.
 
-## 0. Install & Connect
+## 1. Install & Connect
 You must install both `Microsoft.Entra` and `Microsoft.Entra.Beta` modules, if you have not already.
 
 ```powershell
@@ -19,7 +19,7 @@ Connect-Entra -Scopes "Organization.Read.All",
 
 ---
 
-## 1. Run the `Invoke-EntraBetaAgentIdInteractive`
+## 2. Run the `Invoke-EntraBetaAgentIdInteractive`
 
 For the goal of demo purposes in is best to use `Global Administrator` role. 
 
@@ -35,13 +35,9 @@ You must provide at least:
 * Create one Agent Identity
 * Create one Agent User
 
-This short video walks over the process with demo values provided:
-
-[Create Entra Agent ID](https://youtu.be/lj0mLThhbK0)
-
 > **Note:** take a note of the user principal name prefix you give for the agent user, you will need it for the `On Behalf Of (optional) - either a UPN of Agent User, or an incoming bearer token for OBO flow` configuration in n8n. There you must provide the UPN of Agent ID User created. You will be asked to provide it in `Enter UPN prefix for this Agent User (will be @<tenant.default.domain>:` step. 
 
-## 2. Collect the resulted artefacts
+## 3. Collect the resulted artefacts
 
 The result of the operation will be similar to this one:
 
@@ -81,10 +77,23 @@ Finally, you will need to add a new client secret to the Agent Identity Blueprin
 ```
 > **Note:** copy the value of `secretText` and use it for the `Blueprint Secret (client_secret of Agent Identity Blueprint)` in n8n. You will never see this secret text again.
 
----
 
+### 📺 Video Walkthrough
 
-## 3. (Optional) Assign Agent User to Global Reader Role
+Click the image below to play the demonstration:
+
+[![Agent Identity Blueprint Demo](https://img.youtube.com/vi/lj0mLThhbK0/maxresdefault.jpg)](https://www.youtube.com/watch?v=lj0mLThhbK0 "Click to watch on YouTube")
+
+### 🛠️ Key Steps Demonstrated
+
+The video covers the following automated identity management process:
+
+* **Authentication**: Connecting to Microsoft Entra with required scopes.
+* **Blueprint Creation**: Initializing a new Agent Identity Blueprint.
+* **Identity Configuration**: Setting up interactive agents and user permissions.
+* **Secret Management**: Generating and assigning client secrets to the blueprint.
+
+## 4. (Optional) Assign Agent User to Global Reader Role
 
 ```powershell
 $globalReaderRole = Get-EntraBetaDirectoryRole | Where-Object DisplayName -eq "Global Reader"
