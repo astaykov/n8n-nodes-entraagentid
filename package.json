@@ -1,6 +1,6 @@
 {
     "name": "@astaykov/n8n-nodes-entraagentid",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Microsoft Entra Agent ID credentials for n8n",
     "license": "MIT",
     "homepage": "https://github.com/astaykov/n8n-nodes-entraagentid",
