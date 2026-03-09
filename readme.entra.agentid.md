@@ -36,10 +36,10 @@ You must provide at least:
 * Create one Agent User
 
 This short video walks over the process with demo values provided:
-```html
+
 <video src="media/CreateAgentBlueprint.mp4" controls="controls" style="max-width: 100%;">
 </video
-```
+
 
 
 > **Note:** take a note of the user principal name prefix you give for the agent user, you will need it for the `On Behalf Of (optional) - either a UPN of Agent User, or an incoming bearer token for OBO flow` configuration in n8n. There you must provide the UPN of Agent ID User created. You will be asked to provide it in `Enter UPN prefix for this Agent User (will be @<tenant.default.domain>:` step. 
